@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="false">
+
+	<!-- Command parameters used for all the modules -->
+	<!-- <parameter name="drivername" value="firefox" /> -->
+	<!-- <parameter name="drivername" value="ie32" /> -->
+	<!-- <parameter name="drivername" value="chrome" /> -->
+
+	<!-- ************************ User login and forgot password ******************* -->
+
+	<!-- Reading data from "UserLoginTestData.XSLX" file, No need to changes data X_X_X_X_X -->
+	<!-- <test name="Login">
+		<classes>
+			<class name="com.java.modules.LoginAndForgotPassword.UserLogin" />
+		</classes>
+	</test> -->
+
+	<!-- Forgot password -->
+	<!-- <test name="forgot Password">
+		<classes>
+			<class name="com.java.modules.LoginAndForgotPassword.ForgotPassword"></class>
+		</classes>
+	</test> -->
+
+	<!-- ************************ Manage User ******************* -->
+	<!--  ALWAYS KEEP "Delete User" TC BEFORE "Add User" because "Add User" TC depend on "Delete User"-->
+	<test name="Delete User">
+		<classes>
+			<class name="com.java.modules.usermanagement.DeleteUser"></class>
+		</classes>
+	</test>
+
+	<!-- Reading data from "ManageUser.XSLX" file , NEED CHANGES IN AADUSER SHEET @@@@@-->
+	<test name="Add user">
+		<classes>
+			<class name="com.java.modules.usermanagement.AddUser"></class>
+		</classes>
+	</test>
+	
+	<!-- This TC will not work on Mozilla because modify input fields only accept first character of input data-->
+	<test name="Modify User">
+		<classes>
+			<class name="com.java.modules.usermanagement.ModifyUser"></class>
+		</classes>
+	</test>
+	
+	<test name="Filter By Privilege"> 
+		<classes> 
+			<class name="com.java.modules.usermanagement.FilterPrivilege">
+			</class> 
+		</classes> 
+	</test>
+	
+	<test name="Searching option">
+		<classes>
+			<class name="com.java.modules.usermanagement.SearchOption"></class>
+		</classes>
+	</test>
+
+	<test name="ExportUser option">
+		<classes>
+			<class name="com.java.modules.usermanagement.ExportUser"></class>
+		</classes>
+	</test>
+
+	<!-- <test name="Upload bulk user via excel sheet">
+		<classes>
+			<class name="com.java.modules.usermanagement.UploadUserFromExcel"></class>
+		</classes>
+	</test> -->
+
+	<!-- ************************ Privilege Management ******************* -->
+
+	<!-- Reading data from "ManagePrivilegesAndModules.XSLX" NO NEED CHANGES IN ADDPRIVILGE SHEET X_X-->
+	<!-- <test name="Add Privilege">
+	<classes>
+		<class name="com.java.modules.PrivilegeManage.AddPrivilege"></class>
+	</classes>
+	</test> -->
+
+	<!-- <test name="Delete Privilege">
+	<classes>
+		<class name="com.java.modules.PrivilegeManage.DeletePrivilege"></class>
+	</classes>
+	</test> -->
+
+	<!-- Reading data from @DataProvider -->
+	<!-- <test name="Edit Privilege">
+	<classes>
+		<class name="com.java.modules.PrivilegeManage.EditPrivilege"></class>
+	</classes>
+	</test> -->
+	
+	<!-- This TC will not run on chrome and IE becuase it contain drag and drop feature  -->
+	<!-- Reading data from 'ManagePrivilegesAndModules.XSLX' No need to change ASSIGNMODULES sheet X_X-->
+	<!-- <test name="Assign Module to the Privilege"> 
+		<classes> 
+			<class name="com.java.modules.PrivilegeManage.ModuleAssignmentToPrivilege"></class> 
+		</classes> 
+	</test> -->
+	
+	<!-- ************************ Add Question (1.Manage skill 2. Sub skill 
+		3.Topic 4.Suggested Learning and 5.Add Question)******************* -->
+
+	<!-- Reading data from 'ManageSkill.xlsx'  No need to change in AddQuestion  X_X -->
+	<!-- <test name="Add Question">
+		<classes>
+			<class name="com.java.modules.AddQuestions.AddQuestion">
+			</class>
+		</classes>
+	</test> -->
+		 
+	<!-- <test name="Manage skill"> 
+		<classes> 
+			<class name="com.java.modules.AddQuestions.ManageSkill"></class> 
+		</classes> 
+	</test> -->
+
+	<!-- Reading data from 'ManageSkill.xlsx' NO NEED CHANGES IN AddSubSkill  X_X -->
+	<!-- <test name="Manage Sub skill">
+		<classes>
+			<class name="com.java.modules.AddQuestions.ManageSubSkill"></class>
+		</classes>
+	</test> -->
+	
+	<!-- Reading data from 'ManageSkill.xlsx'  No need to change in AddTopic and editTopic  X_X -->
+	<!-- <test name="Manage Topic">
+		<classes>
+			<class name="com.java.modules.AddQuestions.ManageTopic"></class>
+		</classes>
+	</test> -->
+	
+	<!-- Reading data from 'ManageSkill.xlsx'  No need to change in SuggestedLearning  X_X -->
+	<!-- <test name="Suggested Learning">
+		<classes>
+			<class name="com.java.modules.AddQuestions.SuggestedLearning">
+			</class>
+		</classes>
+	</test> -->
+	
+</suite> 
